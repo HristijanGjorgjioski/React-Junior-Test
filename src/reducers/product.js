@@ -1,8 +1,7 @@
 import _ from "lodash";
 
-import * as actionTypes from '../constants/actionTypes'
+import * as actionTypes from '../constants/actionTypes';
 
-// MOCK PRODUCT DATA
 const INITIAL_STATE = {
   categories: [],
   products: [],
@@ -41,41 +40,23 @@ const productReducer = (state = INITIAL_STATE, action) => {
         },
       };
     case actionTypes.ADD_TO_CART:
-      // Get item from payload
       const product = action.payload;
-      // Check if item is already in cart
       const inCart = state.cart.products.find((item) => {
-        // product in cart === payload product
-        if (item.id === product.id) {
-          // product in cart -> attributes === payload product -> attributes
-          const payloadProductAttributes = product.attributes.map(
-            (att) => att.selectedVal
-          );
-          const productInCartAttributes = item.attributes.map(
-            (att) => att.selectedVal
-          );
-
-          const attributesEqual = _.isEqual(
-            productInCartAttributes,
-            payloadProductAttributes
-          );
-
-          if (attributesEqual) {
-            return true;
-          }
-          return false;
+        const equalId = item.id === product.id;
+        const equalAttributes = _.isEqual(item.attributes,product.attributes);
+        if (equalId && equalAttributes) {
+          return true;
         } else {
           return false;
         }
       });
-      // Add item to cart
       return {
         ...state,
         cart: {
           ...state.cart,
           products: inCart
             ? state.cart.products.map((p) =>
-                p.id === product.id ? { ...p, qty: p.qty + 1 } : p
+                _.isEqual(p.attributes, product.attributes) ? { ...p, qty: p.qty + 1 } : p
               )
             : [...state.cart.products, { ...product, qty: 1 }],
         },
@@ -88,7 +69,6 @@ const productReducer = (state = INITIAL_STATE, action) => {
           return prod;
         }
       });
-      // Update attributes
       return {
         ...state,
         cart: {
@@ -101,7 +81,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
         ...state,
         cart: {
           ...state.cart,
-          products: state.cart.products.filter(p => p.id !== action.payload.id ),
+          products: state.cart.products.filter(p => !_.isEqual(p, action.payload.product) ),
         }
       };
     case actionTypes.ADJUST_QTY:
@@ -109,7 +89,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
         ...state,
         cart: {
           ...state.cart,
-          products: state.cart.products.map(p => p.id === action.payload.id ? { ...p, qty: action.payload.qty } : p),
+          products: state.cart.products.map(p => _.isEqual(p, action.payload.product) ? { ...p, qty: action.payload.qty } : p),
         }
       };
     case actionTypes.TOGGLE_CART:

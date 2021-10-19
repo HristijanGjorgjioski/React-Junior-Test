@@ -14,9 +14,9 @@ class CartProductTile extends Component {
 
   adjustQuantity = (value) => {
     if(value <= 0) {
-      this.removeFromCart(this.props.product.id);
+      this.removeFromCart(this.props.product);
     } else {
-      this.props.adjustQty(this.props.product.id, value);
+      this.props.adjustQty(this.props.product, value);
       this.setState({
         product: {...this.props.product, qty: value}
       });
@@ -89,8 +89,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    adjustQty: (productID, value) => dispatch(adjustQty(productID, value)),
-    removeFromCart: (productID) => dispatch(removeFromCart(productID)),
+    adjustQty: (product, value) => dispatch(adjustQty(product, value)),
+    removeFromCart: (product) => dispatch(removeFromCart(product)),
   };
 };
 

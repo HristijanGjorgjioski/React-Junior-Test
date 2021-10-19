@@ -10,6 +10,17 @@ class FullCartProductTile extends Component {
     product: this.props.product,
   };
 
+  getCartTotal = () => {
+    const currency = this.props.currency.selectedCurrency;
+    const totalAmount = this.props.cart.products.reduce((total, product) => {
+      const qty = product.qty;
+      const productPrice = product.prices.find(price => price.currency === currency);
+      return total + (productPrice.amount * qty);
+    }, 0);
+
+    return `${currency} ${totalAmount.toFixed(2)}`;
+  }
+
   productPrice = () => {
     const productPrice = this.props.product.prices.find(
       (price) => price.currency === this.props.currency.selectedCurrency
@@ -50,12 +61,9 @@ class FullCartProductTile extends Component {
     }
   }
 
-
-
   removeFromCart = (productID) => {
     this.props.removeFromCart(productID);
   }
-  
 
   render() {
     const { product } = this.props;
@@ -111,11 +119,11 @@ class FullCartProductTile extends Component {
           <div className="col col--right">
             <div className="row">
               <div className="col col--buttons">
-                <button onClick={() => this.adjustQuantity(this.state.product.qty + 1)} className="full-cart-tile__btn full-cart-tile__btn--selected">
+                <button onClick={() => this.adjustQuantity(++product.qty)} className="full-cart-tile__btn full-cart-tile__btn--selected">
                   +
                 </button>
                 <span className="full-cart-tile__qty">{product.qty}</span>
-                <button onClick={() => this.adjustQuantity(this.state.product.qty - 1)} className="full-cart-tile__btn full-cart-tile__btn--selected">
+                <button onClick={() => this.adjustQuantity(--product.qty)} className="full-cart-tile__btn full-cart-tile__btn--selected">
                   -
                 </button>
               </div>

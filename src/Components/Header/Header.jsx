@@ -1,17 +1,41 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
+
 import { CurrencySwitcher, MiniCart } from "../index";
 import logo from "../../assets/logo-x512.png";
+import cartIcon from '../../assets/icon-cart.png'
 import { connect } from "react-redux";
-import {
-  toggleCart,
-  toggleCurrency,
-} from "../../actions/product";
+import { toggleCart, toggleCurrency } from "../../actions/product";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./styles.scss";
 
 class Header extends Component {
+
+  constructor(props) {
+    super(props)
+    this.cartRef = React.createRef();
+    this.currencyRef = React.createRef();
+  }
+
+  componentDidMount() {
+    document.addEventListener("mousedown", this.checkIfClickedOutside);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener("mousedown", this.checkIfClickedOutside);
+  }
+  
+  checkIfClickedOutside = e => {
+    if (this.props.cart.isOpen && this.cartRef.current && !this.cartRef.current.contains(e.target)) {
+      this.closeCartAndCurrencyIfOpen();
+    }
+
+    if (this.props.currency.isOpen && this.currencyRef.current && !this.currencyRef.current.contains(e.target)) {
+      this.closeCartAndCurrencyIfOpen();
+    }
+  }
+
   openCart = () => {
     if (this.props.currency.isOpen) {
       this.props.toggleCurrency();
@@ -25,6 +49,23 @@ class Header extends Component {
     }
     this.props.toggleCurrency();
   };
+
+  closeCartAndCurrencyIfOpen = () => {
+    if (this.props.cart.isOpen) {
+      this.props.toggleCart();
+    } else if (this.props.currency.isOpen) {
+      this.props.toggleCurrency();
+    } else return;
+  };
+
+  cartProductsQuantity = () => {
+    const qty = this.props.cart.products.reduce((total, product) => {
+      const qty = product.qty;
+      return total + qty;
+    }, 0);
+    return qty;
+  }
+
   render() {
     const { cart, currency, categories } = this.props;
     return (
@@ -44,7 +85,7 @@ class Header extends Component {
               {categories.map((cat) => {
                 return (
                   <NavLink
-                  key={`header-link-${cat.name}`}
+                    key={`header-link-${cat.name}`}
                     to={`/${cat.name}`}
                     exact
                     className="header__item"
@@ -67,19 +108,19 @@ class Header extends Component {
               >
                 {currency.selectedCurrency}
                 <span className="material-icons-outlined">
-                  {currency.isOpen ? "expand_less" : "expand_more"}
+                  {/* {currency.isOpen ? "expand_less" : "expand_more"} */}
                 </span>
-                <CurrencySwitcher currency={currency} />
+                <CurrencySwitcher refs={this.currencyRef} currency={currency} />
               </li>
               <li className="header__action-item cart-dropdown">
                 <span
                   onClick={() => this.openCart()}
                   className="material-icons-outlined"
                 >
-                  shopping_cart
-                  <span className="badge">{cart.products.length}</span>
+                  <img src={cartIcon} style={{ width: '30px' }} />
+                  <span className="badge">{this.cartProductsQuantity()}</span>
                 </span>
-                <MiniCart />
+                <MiniCart refs={this.cartRef}/>
               </li>
             </ul>
           </div>

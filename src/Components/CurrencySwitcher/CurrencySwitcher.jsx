@@ -8,6 +8,7 @@ export class CurrencySwitcher extends Component {
   render() {
     return (
       <ul
+        ref={this.props.refs}
         className={`currency-dropdown__currency-menu ${
           this.props.currency.isOpen ? "currency-dropdown__currency-menu--open" : ""
         }`}

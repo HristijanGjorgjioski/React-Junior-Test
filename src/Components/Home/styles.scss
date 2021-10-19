@@ -1,0 +1,42 @@
+.product-page {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 82px;
+  
+    &__gallery {
+      flex: 1.5;
+      display: flex;
+      padding-right: 80px;
+      box-sizing: border-box;
+  
+      .gallery__thumbnails {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+  
+        img {
+          width: 80px;
+          height: 80px;
+          object-fit: cover;
+          object-position: top;
+          max-width: 80px;
+          margin-bottom: 20px;
+          border: 1px solid #fff;
+          transition: all .2s ease-in-out;
+  
+          &:hover {
+              border: 1px solid var(--c-text);
+              cursor: pointer;
+          }
+        }
+      }
+  
+      .gallery__full-image {
+          width: 100%;
+          img {
+              width: 100%;
+          }
+      }
+    }
+}

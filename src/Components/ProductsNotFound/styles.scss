@@ -1,0 +1,30 @@
+.no-products {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 205px);
+
+    &__image {
+        max-width: 400px;
+    }
+
+    &__text {
+        color: #a7a7a7;
+    }
+
+    &__btn {
+        background-color: var(--c-primary);
+        border: none;
+        padding: 5px 15px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            background-color: var(--c-text);
+        }
+    }
+}

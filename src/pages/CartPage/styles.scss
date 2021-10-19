@@ -1,0 +1,40 @@
+.cart-page {
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+        text-transform: uppercase;
+    }
+
+    &__total {
+        color: #fff;
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 50px;
+
+        h3 {
+            flex: 1;
+            text-transform: uppercase;
+        }
+
+        .cart-page__checkout--btn {
+            flex: 1;
+            background-color: var(--c-primary);
+            border: none;
+            border-radius: unset;
+            color: white;
+            border: 1px solid var(--c-primary);
+            font-weight: 700;
+            font-size: 18px;
+            text-transform: uppercase;
+            padding: 25px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                background-color: #fff;
+                color: var(--c-text);
+                border: 1px solid var(--c-text);
+            }
+        }
+    }
+}

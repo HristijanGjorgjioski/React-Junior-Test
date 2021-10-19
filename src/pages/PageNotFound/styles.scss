@@ -1,0 +1,28 @@
+.page-not-found {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 205px);
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    max-width: 500px;
+  }
+
+  &__btn {
+    background-color: var(--c-primary);
+    border: none;
+    padding: 5px 15px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 50px;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: var(--c-text);
+    }
+  }
+}

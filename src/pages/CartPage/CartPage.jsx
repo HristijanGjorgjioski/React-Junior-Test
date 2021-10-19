@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 
-import EmptyCart from '../../Components/EmptyCart';
-import FullCartProductTile from '../../Components/FullCartProductTile';
+import EmptyCart from '../../Components/EmptyCart/EmptyCart';
+import FullCartProductTile from '../../Components/FullCartProductTile/FullCartProductTile';
 import "./styles.scss";
 
 class CartPage extends Component {

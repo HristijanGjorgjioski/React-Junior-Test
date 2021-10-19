@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import ProductCard from '../../Components/ProductCard';
+import { ProductCard } from '../../Components';
 import './styles.scss';
 
 class CategoryPage extends Component {

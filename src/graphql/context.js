@@ -1,3 +1,4 @@
+import React from 'react';
 import { client } from "@tilework/opus";
 
 // Client Config

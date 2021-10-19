@@ -1,0 +1,17 @@
+.footer {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 45px;
+
+    .copyright {
+        font-size: 16px;
+        font-weight: 400;
+        color: var(--c-text);
+
+        a > strong {
+            text-decoration: underline;
+        }
+    }
+}

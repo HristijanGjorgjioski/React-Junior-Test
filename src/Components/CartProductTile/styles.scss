@@ -1,0 +1,105 @@
+.product-tile {
+  padding-bottom: 20px;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #e5e5e5;
+  
+  .col--left {
+    max-width: 130px;
+    flex-grow: 1;
+  }
+
+  &__name {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 160%;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__price {
+    padding: 0;
+    margin-top: 6px;
+    margin-bottom: 27px;
+    font-weight: 500;
+    font-size: 16px;
+  }
+
+  &__options {
+    .product-tile__option {
+      ul {
+        li {
+          margin-bottom: 10px;
+
+          div.option--swatch {
+            width: 40px;
+            height: 20px;
+            margin-top: 5px;
+          }
+
+          span {
+            font-family: "Roboto Condensed", sans-serif;
+            color: #b3b3b3;
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e5e5e5;
+            padding: 5px 25px 0 0;
+            display: inline-block;
+          }
+
+          strong {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+
+  .col--right {
+    justify-content: center;
+    // .row {
+    //   flex: 1;
+    // }
+    .col--buttons {
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      min-height: 150px;
+      margin-left: 18px;
+
+      button {
+        width: 25px;
+        height: 25px;
+        border-radius: 0;
+        background-color: #fff;
+        color: var(--c-text);
+        border: 1px solid var(--c-text);
+        font-size: 18px;
+        font-weight: 300;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: color 0.2s ease-in-out;
+
+        &:hover {
+          color: var(--c-primary);
+          border-color: var(--c-primary);
+        }
+      }
+    }
+
+    .col--image {
+      background-color: #fff;
+      width: 100px;
+      display: flex;
+      flex: 1;
+      height: 100%;
+      padding: 50px;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      margin-left: 10px;
+    }
+  }
+}

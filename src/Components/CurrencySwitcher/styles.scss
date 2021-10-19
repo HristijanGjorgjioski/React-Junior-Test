@@ -1,0 +1,30 @@
+.currency-dropdown__currency-menu {
+  position: absolute;
+  z-index: 9999;
+  width: 130px;
+  top: 60px;
+  left: -40px;
+  padding: 20px 0;
+  flex-direction: column;
+  background-color: #fff;
+  box-shadow: 0 4px 35px rgba(168, 172, 176, 0.19);
+  display: none;
+
+  &--open {
+    display: flex;
+  }
+
+  li.currency-menu__item {
+    display: flex;
+    justify-content: center;
+    padding: 15px 0;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--c-text);
+
+    &:hover {
+      color: var(--c-primary);
+    }
+  }
+}

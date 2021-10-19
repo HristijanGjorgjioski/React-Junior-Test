@@ -1,9 +1,12 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { CurrencySwitcher, MiniCart } from "../index";
+import logo from "../../assets/logo-x512.png";
 import { connect } from "react-redux";
-import logo from "../../assets/logo.png";
-import { toggleCart, toggleCurrency } from '../../actions/product'
+import {
+  toggleCart,
+  toggleCurrency,
+} from "../../actions/product";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 import "./styles.scss";

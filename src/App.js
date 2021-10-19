@@ -5,8 +5,8 @@ import { connect } from "react-redux";
 import { GraphqlClientContext } from "./graphql/context";
 import { categoriesWithProductsQuery, currenciesQuery } from "./graphql/query";
 
-import { Footer, Header, Loader, ProductsNotFound } from "./Components";
 import { setCategories, setCurrencies, toggleCart, toggleCurrency } from "./actions/product";
+import { Footer, Header, Loader, ProductsNotFound } from "./Components";
 import CartPage from "./pages/CartPage/CartPage";
 import PageNotFound from "./pages/PageNotFound/PageNotFound";
 import CategoryPage from "./pages/CategoryPage/CategoryPage";
@@ -33,6 +33,7 @@ class App extends Component {
       });
       const { categories } = await client.post(categoriesWithProductsQuery);
       const { currencies } = await client.post(currenciesQuery);
+      console.log(categories, currencies)
       this.props.setCategories(categories);
       this.props.setCurrencies(currencies);
     } catch (error) {

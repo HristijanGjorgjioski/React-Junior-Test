@@ -1,0 +1,103 @@
+.Navbar {
+  background-color: white;
+  height: 80px;
+}
+
+.Navbar__Container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Menu */
+
+.Btn.Navbar__Btn {
+  border: 0;
+  border-bottom: 4px solid transparent;
+  height: 100%;
+  text-transform: uppercase;
+  transition: font-weight 250ms ease, border-color 250ms ease, color 250ms ease;
+}
+
+.Navbar__Btn:hover, .Navbar__Btn:focus-visible {
+  background-color: white;
+  color: var(--success-color-400);
+  border-bottom-color: var(--success-color-400);
+}
+
+.Navbar__Btn.Navbar__Btn--Active {
+  background-color: white;
+  font-weight: 600;
+  color: var(--success-color-400);
+  border-bottom-color: var(--success-color-400);
+}
+
+.Navbar__LogoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.Navbar__Logo {
+  height: 35px;
+  width: auto;
+}
+
+/* Global Controllers */
+
+.Navbar__GlobalControllers {
+  display: flex;
+}
+
+.Navbar__CurrencySelectorWrapper {
+  position: relative;
+}
+
+.Navbar__CurrencySetBtn {
+  white-space: nowrap;
+  border: 0;
+  padding: 0.75rem 1rem;
+  width: 100%;
+}
+
+.Navbar__CurrencySetBtn:hover,
+.Navbar__CurrencySetBtn:focus-visible {
+  background-color: white;
+  color: var(--success-color-400);
+}
+
+
+.Navbar__CurrencySelectorMenu {
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  position: absolute;
+  right: 0;
+  display: none;
+  z-index: 10;
+  top: 100%;
+}
+
+.Navbar__CurrencySelectorMenu--Open {
+  display: block;
+}
+
+.Navbar__CartWrapper {
+  position: relative;
+}
+
+.Navbar__CartOpenBtn svg {
+  width: 20px;
+  margin-top: 5px;
+}
+
+.Navbar__CartBadge {
+  background-color: black;
+  color: white;
+  width: 20px;
+  display: inline-block;
+  font-size: 0.875rem;
+  height: 20px;
+  VERTICAL-ALIGN: 13px;
+  border-radius: 50%;
+  margin-left: -5px;
+}

@@ -1,0 +1,36 @@
+.ProductAttribute {
+  margin-bottom: 35px;
+}
+
+.ProductAttribute__Title {
+  font-size: 1.125rem;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ProductAttribute__BtnWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.ProductAttribute__ItemBtn {
+  min-height: 40px;
+  min-width: 50px;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  appearance: none;
+  line-height: 1;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: block;
+  border: 1px solid black;
+}
+
+.ProductAttribute__ItemBtn--Swatch {
+  text-shadow: white 0px 0px 10px;
+}
+
+.ProductAttribute__ItemBtn:hover, .ProductAttribute__ItemBtn:focus-visible {
+  outline: 3px solid rgba(0,0,0,0.5);
+}

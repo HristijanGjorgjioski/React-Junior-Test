@@ -1,0 +1,12 @@
+.StoreItemsList__Title {
+  font-weight: 400;
+  font-size: 2.625rem;
+  margin: 80px 0 100px;
+  line-height: 1.6;
+}
+
+.StoreItemsList__ListWrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 25px;
+}

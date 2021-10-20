@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"javascript.format.enable": true,
+		"prettier.printWidth": 120,
+		"[javascript]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode",
+			"editor.formatOnSave": true,
+		},
+		"editor.tabSize": 2,
+		"git.ignoreLimitWarning": true
+	}
+}

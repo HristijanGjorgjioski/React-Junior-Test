@@ -1,0 +1,105 @@
+.CartPageItem{
+  display: flex;
+  min-height: 200px;
+  border-top: 1px solid #cccccc;
+  padding: 20px 0;
+}
+
+.CartPageItem_ItemInfoWrapper{
+  margin-right: 14px;
+  display: flex;
+  flex-direction: column;
+}
+
+.CartPageItem__Title {
+  font-size: 1.875rem;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.CartPageItem__Price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.CartPageItem__AttributeWrapper {
+  margin-top: auto;
+}
+
+.CartPageItemAttribute + .CartPageItemAttribute {
+  margin-top: 6px;
+}
+
+.CartPageItemAttribute__BtnWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.CartPageItemAttribute__ItemBtn {
+  min-height: 40px;
+  min-width: 50px;
+  margin-top: 8px;
+  margin-right: 8px;
+  line-height: 1;
+  font-size: 1.2rem;
+  border: 1px solid black;
+
+}
+
+.CartPageItemAttribute__ItemBtn:focus-visible {
+  outline: 2px solid rgba(0,0,0,0.5);
+}
+
+.CartPageItem_ItemAmountWrapper {
+  margin-left: auto;
+  display: flex;
+  margin-right: 14px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.CartPageItem__AmountChangeBtn {
+  padding: 0;
+  line-height: 1;
+  font-family: monospace;
+  width: 45px;
+  height: 45px;
+}
+
+.CartPageItem__ItemAmount {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.CartPageItem_ItemImageWrapper {
+  max-width: 150px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.CartPageItem_ItemImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.CartPage__TotalWrapper {
+  margin-top: 35px;
+  border-top: 5px solid;
+  padding-top: 20px;
+}
+
+.CartPage__TotalText {
+  font-size: 1.875rem;
+  margin: 0 0 16px 0;
+  font-weight: 600;
+}
+
+.CartPage__TotalAmount {
+  font-size: 1.5rem;
+  font-weight: 700;
+}

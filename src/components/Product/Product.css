@@ -1,0 +1,95 @@
+.Product {
+  overflow: hidden;
+  margin-top: 70px
+}
+
+.Product__GalleryWrapper {
+  width: 60%;
+  margin-right: 2rem;
+  margin-bottom: 1rem;
+  float: left;
+  min-height: 100px;
+}
+
+.Product__GalleryWrapper .image-gallery-icon {
+  color: var(--success-color-400);
+  filter: drop-shadow(0px 0px 4px rgba(255,255,255, 0.5));
+}
+
+.Product__GalleryWrapper .image-gallery-thumbnail.active,
+.Product__GalleryWrapper .image-gallery-thumbnail:hover,
+.Product__GalleryWrapper .image-gallery-thumbnail:focus {
+  border-color: var(--success-color-400);
+}
+
+
+
+@media screen and (max-width: 992px) {
+  .Product__GalleryWrapper {
+    width: 100%;
+  }
+}
+
+.Product__Title {
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.Product__Description {
+  margin-bottom: 40px;
+}
+
+.Product__Description h1,
+.Product__Description h2,
+.Product__Description h3,
+.Product__Description h4,
+.Product__Description h5,
+.Product__Description h6 {
+  font-weight: 500;
+}
+
+.Product__Description ul{
+  list-style-position: inside;
+  padding-left: 5px;
+}
+
+.Product__VariantSelector {
+  display: inline-block;
+}
+
+.Product__PriceWrapper {
+  margin-bottom: 30px;
+}
+
+.Product__PriceTitle {
+  font-size: 1.125rem;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.Product__PriceAmount {
+  font-size: 1.5rem;
+  display: block;
+  font-weight: 700;
+}
+
+.Product_AddToCartBtn {
+  text-transform: uppercase;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.Product__DescriptionTitle {
+  display: block;
+  margin-top: 40px;
+  font-size: 1.125rem;
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.Product_AddToCartBtn {
+  max-width: 100%;
+  min-width: 300px;
+}

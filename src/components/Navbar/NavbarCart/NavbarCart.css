@@ -1,0 +1,139 @@
+.NavbarCart {
+  position: absolute;
+  right: 0;
+  z-index: 10;
+  width: 300px;
+  max-width: calc(100vw - 20px);
+  padding: 0.75rem 1rem;
+  padding-right: 0;
+  background-color: white;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.NavbarCart--Hidden {
+  display: none;
+}
+
+.NavbarCart__ItemsScrollWrapper {
+  max-height: calc(100vh - 150px);
+  padding-right: 1rem;
+}
+
+.NavbarCart__ItemsScrollWrapper .ps__rail-x,
+.NavbarCart__ItemsScrollWrapper .ps__rail-y {
+  opacity: 0.7;
+}
+
+.NavbarCart__ItemsScrollWrapper:hover .ps__rail-x,
+.NavbarCart__ItemsScrollWrapper:hover .ps__rail-y { opacity: 1; }
+
+.NavbarCart__Title{
+  font-weight: 600;
+}
+
+.NavbarCart__ItemsWrapper {
+  margin: 0.75rem 0;
+}
+
+.NavbarCart__Item {
+  display: flex;
+  margin: 20px 0;
+}
+
+.NavbarCart__ItemInfo {
+  margin-right: 8px;
+  display: flex;
+  flex-direction: column;
+}
+
+.NavbarCart__ItemName {
+  margin-bottom: 0.25rem;
+}
+
+.NavbarCart__ItemPrice {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.NavbarCartAttr {
+  margin-bottom: 0.4rem;
+}
+
+.NavbarCartAttr:last-child {
+  margin-bottom: 0;
+}
+
+.NavbarCartAttr__ItemBtn {
+  padding: 0.25rem;
+  line-height: 1;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  line-height: 1;
+  cursor:not-allowed;
+  font-size: 0.875rem;
+}
+
+.NavbarCartAttr__ItemBtn:focus-visible {
+  outline: 2px solid #161616;
+}
+
+.NavbarCartAttr__ItemBtn:not( .NavbarCartAttr__ItemBtn--Selected):hover {
+  background-color: white;
+  color: #161616;
+  border-color: #161616;
+}
+
+.NavbarCartAttr__ItemBtn:last-child {
+  margin-right: 0;
+}
+
+.NavbarCartAttr__ItemBtn--Swatch {
+  width: 24px;
+  height: 24px;
+}
+
+.NavbarCart__ItemAttributes {
+  margin-top: auto;
+}
+
+.NavbarCart__ItemAmountSection {
+  margin-left: auto;
+  display: flex;
+  margin-right: 8px;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.NavbarCart__AmountChangeBtn {
+  padding: 0;
+  line-height: 1;
+  font-family: monospace;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.NavbarCart__ItemImgWrapper {
+  max-width: 110px;
+}
+
+.NavbarCart__ItemImgWrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+.NavbarCart__Total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin: 0.75rem 0;
+}
+
+.NavbarCart__BtnWrapper {
+  justify-content: space-between;
+  display: flex;
+}
+
+.NavbarCart__BtnWrapper .Btn {
+  flex-basis: 48%;
+}

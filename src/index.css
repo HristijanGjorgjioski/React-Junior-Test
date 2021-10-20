@@ -1,0 +1,85 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+@import '~react-perfect-scrollbar/dist/css/styles.css';
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --c-black: #1D1F22;
+  --success-color-100: #e2ffea;
+  --success-color-300: #7deb9a;
+  --success-color-400: #5ECE7B;
+  --success-color-500: #48ba66;
+  --success-color-lighter: #5ECE7B;
+  --success-color-text-shadow: -1px -1px 1px #2B5F39, 1px -1px 1px #2B5F39, -1px 1px 1px #2B5F39, 1px 1px 1px #2B5F39;
+}
+
+body, html {
+  margin: 0;
+}
+
+body, html, button {
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: var(--c-black);
+  font-variant-numeric: lining-nums;
+}
+
+.Store {
+  position: relative;
+}
+
+.Container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1rem;
+}
+
+.Footer {
+  margin-top: 300px;
+}
+
+/* Buttons */
+
+.Btn {
+  appearance: none;
+  line-height: 1.5;
+  display: inline-block;
+  font-weight: 400;
+  color: #161616;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid;
+  padding: .375rem 1rem;
+  font-size: 1rem;
+  border-radius: 0;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.Btn--Selected, .Btn:hover, .Btn:focus-visible {
+  background-color: #161616;
+  color: white;
+  border-color: #161616;
+}
+
+.Btn[disabled] {
+  opacity: 0.7;
+}
+
+.Btn--Success {
+  background-color: var(--success-color-400);
+  border: 1px solid var(--success-color-400);
+  font-weight: 600;
+  color: white;
+}
+
+.Btn--Success:hover, .Btn--Success:focus-visible {
+  background-color: var(--success-color-500);
+  border-color: var(--success-color-500);
+  color: white;
+}
